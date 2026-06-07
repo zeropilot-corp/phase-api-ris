@@ -1,5 +1,5 @@
 # Phase API — RIS Companion Artifacts
-
+[![Validate ERDs](https://github.com/zeropilot-corp/phase-api-ris/actions/workflows/validate.yml/badge.svg)](https://github.com/zeropilot-corp/phase-api-ris/actions/workflows/validate.yml)
 [![License: CC0-1.0](https://img.shields.io/badge/Schema%20%26%20Descriptors-CC0--1.0-lightgrey)](LICENSE)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue)](LICENSE)
 [![Submitted: IEEE AP Magazine](https://img.shields.io/badge/Submitted-IEEE%20AP%20Magazine%202026-orange)]()
@@ -96,9 +96,9 @@ phase-api-ris/
 │ ├── exp_wideband_squint.py ← Wideband squint profile vs. ERD frequency grid [forthcoming]
 │ ├── exp_coupling_robustness.py ← Inter-element coupling robustness sweep [forthcoming]
 │ ├── exp_evm_gsr008.py ← EVM proxy mapped to GS RIS 008 validation [forthcoming]
-│ ├── validate_erd.py ← Reference ERD validation script [forthcoming]
+│ ├── validate_erd.py ← Reference ERD validation script
 │ ├── run_all_experiments.sh ← Reproduce all supplement experiments [forthcoming]
-│ └── expected_results.json ← Reference outputs for CI validation fixture [forthcoming] 
+│ └── expected_results.json ← Reference outputs for CI validation fixture 
 
 ```
 > **Note on experiment scripts:** Full Python experiment scripts reproducing the supplement
@@ -114,7 +114,7 @@ phase-api-ris/
 ```bash
 git clone https://github.com/zeropilot-corp/phase-api-ris.git
 cd phase-api-ris
-pip install numpy scipy matplotlib   # Python 3.9+ recommended
+pip install numpy scipy matplotlib jsonschema   # Python 3.9+ recommended
 ```
 
 No hardware or full-wave solver is required. All experiments use the array-factor model with
