@@ -1,0 +1,20 @@
+{
+  "_comment": "Reference outputs for Phase API ERD validation CI. Generated against schema/erd.schema.json. Update intentionally when schema or example ERDs change.",
+  "schemaFile": "schema/erd.schema.json",
+  "validator": "experiments/validate_erd.py",
+  "expected": [
+    {
+      "file": "schema/erd_pin_28ghz.json",
+      "schemaValid": true,
+      "hardwareClass": "PIN-binary",
+      "sanityWarnings": 0
+    },
+    {
+      "file": "schema/erd_varactor_28ghz.json",
+      "schemaValid": true,
+      "hardwareClass": "varactor-continuous",
+      "sanityWarnings": 0
+    }
+  ],
+  "expectedExitCode": 0
+}
