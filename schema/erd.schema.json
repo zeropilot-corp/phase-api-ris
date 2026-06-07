@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/zeropilot/phase-api-ris/schema/erd.schema.json",
+  "title": "Element Response Descriptor (ERD)",
+  "description": "Non-normative, machine-consumable behavioral component datasheet for a RIS / reflectarray unit cell. Declares what the unit cell does at the Phase API boundary without exposing internal geometry, substrate stack-up, or bias-circuit details. Companion artifact to: R. D. Javor, 'The Phase API', ZeroPilot Corporation, 2026.",
+  "type": "object",
+  "required": [
+    "erd_version",
+    "hardware_class",
+    "realized_phase_range",
+    "phase_quantization_resolution",
+    "operating_frequency_grid_GHz",
+    "svr_core_angular_limits"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "erd_version": {
+      "type": "string",
+      "description": "ERD schema version, e.g. '1.0'."
+    },
+    "hardware_class": {
+      "type": "string",
+      "description": "Runtime control object selector, e.g. 'PIN-binary', 'varactor-continuous'."
+    },
+    "vendor": {
+      "type": "string",
+      "description": "Vendor or originating organization."
+    },
+    "part_number": {
+      "type": "string",
+      "description": "Vendor part or design identifier."
+    },
+    "realized_phase_range": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Achievable phase extent [min, max] in degrees."
+    },
+    "phase_quantization_resolution": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "State granularity in degrees. Determines quantization residual."
+    },
+    "amplitude_variation_dB": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Peak-to-peak amplitude variation across phase states, in dB. Aperture efficiency loss predictor."
+    },
+    "amplitude_phase_coupling_dB_per_rad": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Amplitude-phase coupling in dB/rad. Command realization error / runtime correction budget."
+    },
+    "nearest_neighbor_coupling_dB": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Nearest-neighbor coupling |S| magnitude in dB. Coupling metadata; declared, not hidden in synthesis."
+    },
+    "operating_frequency_grid_GHz": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Frequency grid in GHz. Core field; enables wideband squint prediction. A scalar lookup table cannot express per-frequency beam pointing."
+    },
+    "per_state_insertion_loss_dB": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Per-state insertion loss in dB. Per-state gain contribution to link budget."
+    },
+    "phase_error_rms_deg": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "State-realization phase error, 1-sigma Gaussian, in degrees. Feeds EVM budget."
+    },
+    "amplitude_error_rms_dB": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Amplitude error, 1-sigma, in dB. Feeds aperture efficiency."
+    },
+    "polarization": {
+      "type": "string",
+      "description": "Operating polarization, e.g. 'linear-x', 'dual', 'RHCP'."
+    },
+    "calibration_uncertainty_budget_deg": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Residual implementation error, 1-sigma, in degrees. Performance confidence margin."
+    },
+    "temperature_drift_deg_per_C": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Phase drift in degrees per degree C. Environmental stability declaration."
+    },
+    "state_transition_timing_us": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "State-transition timing in microseconds. Controller scheduling constraint."
+    },
+    "svr_core_angular_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Core region: scalar/vector control sufficient with ordinary runtime complexity.",
+      "properties": {
+        "theta_incident_max_deg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "theta_scattered_max_deg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "svr_marginal_angular_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Marginal region: apply higher-order corrections, prepare predictive handoff.",
+      "properties": {
+        "theta_incident_max_deg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "theta_scattered_max_deg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "wideband_squint_deg_per_GHz": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Squint profile across the frequency grid, in degrees per GHz."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
