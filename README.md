@@ -84,6 +84,9 @@ phase-api-ris/
 ├── README.md ← This file
 ├── LICENSE ← CC0-1.0 (schema/docs) + MIT (code)
 ├── CONTRIBUTING.md ← Community profiling and ERD submission guidelines
+├── .github/
+│   └── workflows/
+│       └── validate.yml      ← CI: validates example ERDs on every push/PR
 ├── paper/
 │ ├── PhaseAPIRIS_MainPaper.pdf ← Main paper (perspective/tutorial) — forthcoming post-acceptance
 │ └── PhaseAPIRIS_Supplementary.pdf← Supplementary material (S-I – S-X) — forthcoming
