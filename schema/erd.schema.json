@@ -142,7 +142,7 @@
     "svr_marginal_angular_limits": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Marginal region: apply higher-order corrections, prepare predictive handoff.",
+      "description": "Marginal region: apply higher-order corrections. Angular validity approaching limit.",
       "properties": {
         "theta_incident_max_deg": {
           "type": [
