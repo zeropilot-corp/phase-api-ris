@@ -1,6 +1,45 @@
+Phase API — Electromagnetic Response Descriptor (ERD) and Spatial Validity Region (SVR)
+Companion Artifacts
+R. D. Javor, ZeroPilot Corporation, 2026
+
+Companion article:
+  R. D. Javor, "Electromagnetic Response Descriptors, Spatial Validity Regions, and the
+  Phase API: An Antenna-Domain Interface for Reconfigurable Intelligent Surfaces in 6G,"
+  ZeroPilot Corporation, 2026.
+
+============================================================================
+SPLIT LICENSE MODEL
+============================================================================
+
+This repository uses a split license model.
+
+----------------------------------------------------------------------------
+PART A — Specification, schema, field names, documentation, and examples
+         Released under CC0 1.0 Universal (Public Domain Dedication)
+----------------------------------------------------------------------------
+
+The following are dedicated to the public domain under CC0 1.0 to support
+royalty-free community adoption and profiling:
+
+  - The ERD JSON schema (schema/erd.schema.json)
+  - ERD and SVR field names and definitions
+  - All documentation text (including README.md and CONTRIBUTING.md)
+  - The populated example descriptors (schema/erd_pin_28ghz.json,
+    schema/erd_varactor_28ghz.json)
+
+To the extent possible under law, R. D. Javor and ZeroPilot Corporation have
+waived all copyright and related or neighboring rights to the items listed
+above. See https://creativecommons.org/publicdomain/zero/1.0/ for the full
+CC0 1.0 legal text.
+
+----------------------------------------------------------------------------
+PART B — Reference validation / parsing code
+         Released under the MIT License
+----------------------------------------------------------------------------
+
 MIT License
 
-Copyright (c) 2026 rdjzeropilot
+Copyright (c) 2026 R. D. Javor, ZeroPilot Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +58,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+----------------------------------------------------------------------------
+SCOPE LIMITATION
+----------------------------------------------------------------------------
+
+This dedication and license apply ONLY to the schema, field names, documentation,
+example descriptors, and non-normative reference code described above. They do
+NOT dedicate, license, or grant any rights to any physical RIS implementation,
+unit-cell design, controller architecture, calibration apparatus, or
+manufacturing method, all of which are expressly reserved.
