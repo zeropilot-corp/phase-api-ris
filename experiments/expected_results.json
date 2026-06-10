@@ -1,19 +1,23 @@
 {
-  "_comment": "Reference outputs for Phase API ERD validation CI. Generated against schema/erd.schema.json. Update intentionally when schema or example ERDs change.",
+  "_comment": "Reference outputs for Phase API ERD validation CI. Generated against schema/erd.schema.json (JSON Schema draft-07). Update intentionally when schema or example ERDs change. Companion artifact for: R. D. Javor, 'Electromagnetic Response Descriptors, Spatial Validity Regions, and the Phase API: An Antenna-Domain Interface for Reconfigurable Intelligent Surfaces in 6G', ZeroPilot Corporation, 2026.",
   "schemaFile": "schema/erd.schema.json",
-  "validator": "experiments/validate_erd.py",
+  "schemaDraft": "draft-07",
+  "validator": "validation/validate_erd.py",
+  "validatorClass": "Draft7Validator",
   "expected": [
     {
       "file": "schema/erd_pin_28ghz.json",
       "schemaValid": true,
-      "hardwareClass": "PIN-binary",
-      "sanityWarnings": 0
+      "hardware_class": "PIN-binary",
+      "sanityWarnings": 0,
+      "notes": "1-bit PIN-diode ERD. realized_phase_range [0, 180]; SVR core 45 deg, marginal 60 deg. per_state_insertion_loss_dB has 2 entries (one per binary state)."
     },
     {
       "file": "schema/erd_varactor_28ghz.json",
       "schemaValid": true,
-      "hardwareClass": "varactor-continuous",
-      "sanityWarnings": 0
+      "hardware_class": "varactor-continuous",
+      "sanityWarnings": 0,
+      "notes": "Continuous varactor ERD. realized_phase_range [0, 360]; phase_quantization_resolution 0.0; SVR core 50 deg, marginal 65 deg. per_state_insertion_loss_dB has 1 entry (continuous hardware)."
     }
   ],
   "expectedExitCode": 0
