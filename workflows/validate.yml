@@ -9,6 +9,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -21,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: pip install jsonschema
 
-      - name: Validate example ERDs against schema
+      - name: Validate example ERDs against schema (JSON Schema draft-07)
         run: |
-          python experiments/validate_erd.py \
+          python validation/validate_erd.py \
             schema/erd_pin_28ghz.json \
             schema/erd_varactor_28ghz.json
